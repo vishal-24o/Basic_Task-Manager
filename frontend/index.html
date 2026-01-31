@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Task Manager</h1>
+      <button type="button" id="logoutBtn" class="btn-logout" style="display: none;">Logout</button>
+    </header>
+
+    <section id="authSection" class="auth-section">
+      <div id="loginWrap" class="auth-form-wrap">
+        <form id="loginForm" class="auth-form">
+          <h2>Login</h2>
+          <label for="loginEmail">Email</label>
+          <input type="email" id="loginEmail" required placeholder="Email">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" required placeholder="Password">
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      <div id="registerWrap" class="auth-form-wrap" style="display: none;">
+        <form id="registerForm" class="auth-form">
+          <h2>Register</h2>
+          <label for="registerEmail">Email</label>
+          <input type="email" id="registerEmail" required placeholder="Email">
+          <label for="registerPassword">Password</label>
+          <input type="password" id="registerPassword" required placeholder="Password (min 6)">
+          <button type="submit">Register</button>
+        </form>
+      </div>
+      <p class="auth-toggle"><span id="authToggleText">New user? </span><a href="#" id="authToggleLink">Register now</a></p>
+    </section>
+
+    <section id="taskSection" class="task-section" style="display: none;">
+      <section class="add-task">
+        <h2>Add Task</h2>
+        <form id="taskForm">
+          <label for="title">Title</label>
+          <input type="text" id="title" name="title" required placeholder="Task title">
+
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="3" placeholder="Task description"></textarea>
+
+          <label for="status">Status</label>
+          <select id="status" name="status">
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+
+          <button type="submit">Add Task</button>
+        </form>
+      </section>
+
+      <section class="task-list-section">
+        <div class="task-list-header">
+          <h2>Tasks</h2>
+          <label for="statusFilter">Filter:</label>
+          <select id="statusFilter">
+            <option value="All">All</option>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+        <div id="taskList" class="task-list">
+          <!-- Tasks loaded by script.js -->
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+/* Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+/* Layout */
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+header {
+  margin-bottom: 24px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Auth section */
+.auth-section {
+  max-width: 400px;
+}
+
+.auth-form-wrap {
+  margin-bottom: 16px;
+}
+
+.auth-form label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.auth-form button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: #333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.auth-form button[type="submit"]:hover {
+  background: #222;
+}
+
+.auth-toggle {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.auth-toggle a {
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.auth-toggle a:hover {
+  text-decoration: underline;
+}
+
+/* Add Task section */
+.add-task {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.add-task h2 {
+  margin: 0 0 16px 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #444;
+}
+
+#taskForm label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #555;
+}
+
+#taskForm input,
+#taskForm textarea,
+#taskForm select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+}
+
+#taskForm textarea {
+  resize: vertical;
+  min-height: 72px;
+}
+
+#taskForm input:focus,
+#taskForm textarea:focus,
+#taskForm select:focus {
+  outline: none;
+  border-color: #555;
+}
+
+#taskForm button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background: #333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#taskForm button[type="submit"]:hover {
+  background: #222;
+}
+
+/* Task list section */
+.task-list-section h2 {
+  margin: 0 0 16px 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-item {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.task-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-content strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 1rem;
+  color: #222;
+}
+
+.task-content p {
+  margin: 0 0 8px 0;
+  font-size: 0.875rem;
+  color: #555;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.task-content .status {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #555;
+  background: #eee;
+  border-radius: 4px;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.task-actions button {
+  padding: 8px 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+}
+
+.task-actions button:hover {
+  background: #f5f5f5;
+  border-color: #999;
+}
+
+.task-actions .btn-delete:hover {
+  background: #fee;
+  border-color: #c33;
+  color: #c33;
+}
+
+.task-actions .btn-save {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.task-actions .btn-save:hover {
+  background: #222;
+}
+
+.task-actions .btn-cancel {
+  background: #fff;
+}
+
+/* Inline edit inputs inside .task-item */
+.task-item .edit-title,
+.task-item .edit-desc,
+.task-item .edit-status {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.task-item .edit-desc {
+  min-height: 60px;
+  resize: vertical;
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  padding: 32px 16px;
+  color: #777;
+  font-size: 0.9375rem;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px dashed #ddd;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .container {
+    padding: 16px 12px;
+  }
+
+  .add-task {
+    padding: 16px;
+  }
+
+  .task-item {
+    padding: 12px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-actions {
+    justify-content: flex-end;
+  }
+}
